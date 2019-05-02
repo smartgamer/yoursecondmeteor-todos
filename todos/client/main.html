@@ -1,13 +1,31 @@
 <head>
-  <title>todos</title>
+  <title>Todos</title>
 </head>
 
 <body>
+  <h1> Todos </h1>
+  {{>todos}}
+
+
   <h1>Welcome to Meteor!</h1>
 
   {{> hello}}
   {{> info}}
 </body>
+
+
+<template name="todos">
+  <ul>
+    {{#each todo}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+
+</template>
+
+
+
+
 
 <template name="hello">
   <button>Click Me</button>

@@ -3,6 +3,19 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
+
+
+Template.todos.helpers ({
+	'todo': function () {
+		return Todos.find({}, {sort:{createdAt:-1}});
+	}
+})
+
+
+
+
+
+
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
